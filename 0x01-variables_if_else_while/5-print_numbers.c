@@ -1,18 +1,21 @@
 #include <stdio.h>
 /**
- * main - entry point
+ * main - Entry point
  *
- * Description: Print numbers 0 to 9 on one line
- * Return: 0
+ * Return: Always 0 (success/correct)
  */
 int main(void)
+
 {
-char i;
+int i;
 
-for (i = '0'; i <= '9'; ++i)
-putchar(i);
+for (i = 0 ; i < 10; i++)
+{
+printf("%i", i);
+}
 
-putchar('\n');
+printf("\n");
 
 return (0);
+
 }	
