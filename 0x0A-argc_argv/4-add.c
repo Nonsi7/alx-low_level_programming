@@ -25,7 +25,8 @@ int _isnumber(char *s)
 			check = 0;
 			break;
 		}
-	}return (check);
+	}
+	return (check);
 }
 /**
  * main - Entry point
