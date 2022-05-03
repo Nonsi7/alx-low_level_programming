@@ -24,5 +24,5 @@ int main(int argc, char **argv)
 		n = atoi(argv[1]) * atoi(argv[2]);
 		printf("%i\n", n);
 	}
-	return (0);
+	return (ex);
 }
