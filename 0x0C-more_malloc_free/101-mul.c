@@ -15,6 +15,7 @@ int _atoi_digit(char x)
 		res = x - '0';
 	return (res);
 }
+
 /**
  * _isNumber - Define if a string is a number.
  * @argv: Pointer to string.
@@ -30,6 +31,7 @@ int _isNumber(char *argv)
 			return (1);
 	return (0);
 }
+
 /**
  * _calloc - allocate array of size * nmemb.
  * @nmemb: number of elements.
@@ -52,6 +54,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	return (tab);
 }
+
 /**
  * mul_array - multiply two arrays.
  * @a1: first array.
@@ -104,6 +107,7 @@ void print_array(char *a, int nb)
 	}
 	_putchar('\n');
 }
+
 /**
  * main - print the multiplication of 2 numbers.
  * @argc: array length.

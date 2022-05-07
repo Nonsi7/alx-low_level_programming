@@ -4,7 +4,6 @@
 /**
  * malloc_checked - allocate memory.
  * @b: size of the memory to be allocated.
- *
  * Return: pointer;
  **/
 
