@@ -1,18 +1,19 @@
-#include "stdlib.h"
+/**
+ * File: 0-print_name.c
+ * Author: Bridget de Bock
+ */
+
 #include "function_pointers.h"
-#include <stdio.h>
 
 /**
- * print_name - function to print name
- *
- * @name: name to print
- * @f: function pointer that doesn't return anything
- *
- * Return: Always 0 (Success)
+ * print_name - prints a name
+ * @name: name to be printed
+ * @f: callback function that prints name
  */
 
 void print_name(char *name, void (*f)(char *))
 {
-	if (name && f)
-		f(name);
+	if (!f || !name)
+		return;
+	(*f)(name);
 }
