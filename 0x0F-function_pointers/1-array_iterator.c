@@ -12,7 +12,6 @@
  * @size: number of elements to loop through
  * @action: action to be executed on each element
  */
-
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	if (action && array)
