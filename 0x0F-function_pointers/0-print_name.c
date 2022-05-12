@@ -1,8 +1,3 @@
-/**
- * File: 0-print_name.c
- * Author: Bridget de Bock
- */
-
 #include "function_pointers.h"
 
 /**
