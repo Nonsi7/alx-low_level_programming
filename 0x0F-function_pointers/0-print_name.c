@@ -1,3 +1,8 @@
+/*
+ * File: 0-print_name.c
+ * Author: Bridget de Bock
+ */
+
 #include "function_pointers.h"
 
 /**
@@ -5,10 +10,10 @@
  * @name: name to be printed
  * @f: callback function that prints name
  */
-
 void print_name(char *name, void (*f)(char *))
 {
 	if (!f || !name)
 		return;
 	(*f)(name);
 }
+
