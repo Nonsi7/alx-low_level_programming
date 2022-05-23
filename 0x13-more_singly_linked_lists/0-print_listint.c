@@ -1,3 +1,5 @@
+#define LISTS_H
+
 #include "lists.h"
 #include <stdio.h>
 
