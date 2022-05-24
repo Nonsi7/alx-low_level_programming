@@ -6,7 +6,7 @@
  * @head: Address of the first node of a list.
  **/
 
-void free_listint2(listint **head)
+void free_listint2(listint_t **head)
 {
 	listint_t *temp;
 
