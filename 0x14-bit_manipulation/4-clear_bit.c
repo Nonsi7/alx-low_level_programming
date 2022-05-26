@@ -6,7 +6,7 @@
  * @index: The index to set the value at - indices start at 0.
  *
  * Return: If an error occurs - -1.
- *         Otherwise - 1.
+ *        Otherwise - 1.
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
@@ -14,7 +14,6 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 
 	*n &= ~(1 << index);
-	
 
 	return (1);
 }
