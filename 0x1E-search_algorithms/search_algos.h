@@ -30,4 +30,5 @@ int mod_binary_search(int *array, int value, int begin, int end);
 int advanced_binary(int *array, size_t size, int value);
 int recursive_binary(int *array, int value, int begin, int end);
 listint_t *jump_list(listint_t *list, size_t size, int value);
+skiplist_t *linear_skip(skiplist_t *list, int value);
 #endif
