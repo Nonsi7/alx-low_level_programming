@@ -1,47 +1,46 @@
+#include <math.h>
 #include "search_algos.h"
 
 /**
- * jump_list - jump searches on singly linked list
- * @list: pointer to head node
- * @size: its size
- * @value: value to search for
+ * linear_skip - Searches a value in a sorted linked list with an \
+ * express lane using a linear search.
+ * @list: The linked list with an express lane to search in.
+ * @value: The value to look for.
  *
- * Return: the node found or NULL
+ * Return: The node with the value in the linked list, otherwise NULL.
  */
-listint_t *jump_list(listint_t *list, size_t size, int value)
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	size_t i = 0, j = sqrt(size), k = 0, last_j = 0;
-	listint_t *last = list;
+	size_t i, step, a = 0, b = 0;
+	skiplist_t *node, *next;
 
 	if (!list)
 		return (NULL);
-
-	while (list->n < value)
+	node = list;
+	next = node->express ? node->express : node;
+	while (next)
 	{
-		for (last_j = i, last = list, k = 0; list->next && k < j; k++)
-		{
-			list = list->next;
-			i++;
-		}
-		printf("Value checked at index [%lu] = [%d]\n", i, list->n);
-		if (!list->next)
+		printf("Value checked at index [%d] = [%d]\n", (int)next->index, next->n);
+		if (next->n >= value)
 			break;
+		node = next;
+		if ((node->n < value) && (node->express == NULL))
+		{
+			while (next->next)
+				next = next->next;
+			break;
+		}
+		next = node->express ? node->express : node;
 	}
-
-	if (!list->next)
-		j = last_j;
-	else
-		j = i >= j ? i - j : 0;
-	printf("Value found between indexes [%lu] and [%lu]\n", j, i);
-	i = i >= size ? size - 1 : i;
-	list = last;
-	while (list)
+	a = node->index;
+	b = next->index;
+	printf("Value found between indexes [%d] and [%d]\n", (int)a, (int)b);
+	while (node)
 	{
-		printf("Value checked at index [%lu] = [%d]\n", j, list->n);
-		if (list->n == value)
-			return (list);
-		j++;
-		list = list->next;
+		printf("Value checked at index [%d] = [%d]\n", (int)node->index, node->n);
+		if (node->n == value)
+			return (node);
+		node = node->next;
 	}
 	return (NULL);
 }
